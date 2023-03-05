@@ -6,15 +6,16 @@ import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
 
 import * as config from '@/lib/config'
 import { Container } from '@/components/Container'
+import { Article } from '@/components/Home/Article'
 import { Photos } from '@/components/Home/Photos'
-// import { Article } from '@/components/Home/Article'
 import { Resume } from '@/components/Home/Resume'
 import { SocialLink } from '@/components/SocialLink'
+import { getFeaturedArticles } from '@/lib/get-featured-articles'
 
 const ICON_STYLE =
   'h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300 hover:text-teal-500 dark:hover:text-teal-400'
 
-export default function Home() {
+export default function Home({ articles }) {
   return (
     <>
       <Head>
@@ -52,10 +53,9 @@ export default function Home() {
       <Container className='mt-24 md:mt-28'>
         <div className='mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2'>
           <div className='flex flex-col gap-16'>
-            {/* TODO: get featured articles */}
-            {/* {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))} */}
+            {articles.map((article) => (
+              <Article key={article.id} article={article} />
+            ))}
           </div>
           <div className='space-y-10 lg:pl-16 xl:pl-24'>
             <Resume />
@@ -66,10 +66,10 @@ export default function Home() {
   )
 }
 
-// export async function getStaticProps() {
-//   return {
-//     props: {
-//       articles: (await getAllNotionArticles()).slice(0, 4)
-//     }
-//   }
-// }
+export async function getStaticProps() {
+  return {
+    props: {
+      articles: await getFeaturedArticles()
+    }
+  }
+}

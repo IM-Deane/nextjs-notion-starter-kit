@@ -13,6 +13,7 @@ import {
   NavigationStyle,
   PageUrlOverridesInverseMap,
   PageUrlOverridesMap,
+  ResumeItem,
   Site
 } from './types'
 
@@ -53,6 +54,7 @@ export const domain: string = getSiteConfig('domain')
 export const email: string = getSiteConfig('email')
 export const description: string = getSiteConfig('description', 'Notion Blog')
 export const language: string = getSiteConfig('language', 'en')
+export const resume: ResumeItem[] = getSiteConfig('resume', null)
 
 // social accounts
 export const twitter: string | null = getSiteConfig('twitter', null)

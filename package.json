@@ -29,6 +29,7 @@
     "@heroicons/react": "^2.0.16",
     "@keyvhq/core": "^1.6.9",
     "@keyvhq/redis": "^1.6.10",
+    "@notionhq/client": "^2.2.3",
     "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/typography": "0.5.4",
     "@vercel/og": "^0.0.19",

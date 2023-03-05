@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 import clsx from 'clsx'
@@ -26,23 +27,41 @@ export function Card({ as: Component = 'div', children, className = '' }) {
   )
 }
 
-Card.Link = function CardLink({ children, href }) {
+Card.Link = function CardLink({ children, href, isExternal = false }) {
   return (
     <>
       <div className='absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />
-      <a href={href} target='_blank' rel='noopener noreferrer'>
-        <span className='absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl' />
-        <span className='relative z-10'>{children}</span>
-      </a>
+      {isExternal ? (
+        <a href={href} target='_blank' rel='noopener noreferrer'>
+          <span className='absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl' />
+          <span className='relative z-10'>{children}</span>
+        </a>
+      ) : (
+        <Link href={href}>
+          <span className='absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl' />
+          <span className='relative z-10'>{children}</span>
+        </Link>
+      )}
     </>
   )
 }
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
+Card.Title = function CardTitle({
+  as: Component = 'h2',
+  href,
+  children,
+  isExternal = false
+}) {
   return (
     // @ts-expect-error ignore intrinsic attribute error
     <Component className='text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100'>
-      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
+      {href ? (
+        <Card.Link href={href} isExternal={isExternal}>
+          {children}
+        </Card.Link>
+      ) : (
+        children
+      )}
     </Component>
   )
 }

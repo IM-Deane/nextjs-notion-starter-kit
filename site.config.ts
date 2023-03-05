@@ -6,7 +6,7 @@ import logoZTM from '/public/images/logos/ztm-logo.png'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '7875426197cf461698809def95960ebf',
+  rootNotionPageId: 'a2e4e7d238da4434abbc21c48df55d24',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
