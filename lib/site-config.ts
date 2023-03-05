@@ -10,6 +10,7 @@ export interface SiteConfig {
   email: string
   description?: string
   language?: string
+  resume: types.ResumeItem[]
 
   twitter?: string
   github?: string

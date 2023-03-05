@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 import { ExtendedRecordMap, PageMap } from 'notion-types'
 import { ParsedUrlQuery } from 'querystring'
 
@@ -69,4 +71,16 @@ export interface NotionPageInfo {
   author: string
   authorImage: string
   detail: string
+}
+
+// note: this should mirror the export JSON from https://latexresu.me/
+export interface ResumeItem {
+  company: string
+  position: string
+  logo?: StaticImageData
+  startDate: string
+  endDate: string
+  location?: string
+  website?: string
+  highlights?: string[]
 }
