@@ -9,17 +9,19 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  name: 'Engineer, writer, and Star Wars aficionado',
+  domain: 'tristandeane.ca',
+  author: 'Tristan Deane',
+  email: 'contact@tristandeane.ca',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description:
+    "Hey friend, I'm Tristan, a software engineer and entrepreneur from Edmonton, Canada. I have a deep fascination with technology and entrepreneurship, and I'm always looking for ways to combine these passions.",
 
   // social usernames (optional)
-  twitter: 'transitive_bs',
-  github: 'transitive-bullshit',
-  linkedin: 'fisch2',
+  twitter: 'thebashfulsun',
+  github: 'IM-Deane',
+  linkedin: 'tristan-deane-software-developer',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`

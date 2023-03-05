@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 
 import * as Fathom from 'fathom-client'
+import 'focus-visible'
 // used for rendering equations (optional)
 import 'katex/dist/katex.min.css'
 import posthog from 'posthog-js'
@@ -18,22 +19,25 @@ import 'styles/global.css'
 import 'styles/notion.css'
 // global style overrides for prism theme (optional)
 import 'styles/prism-theme.css'
+import 'styles/tailwind.css'
 
-import { bootstrap } from '@/lib/bootstrap-client'
-import {
-  fathomConfig,
-  fathomId,
-  isServer,
-  posthogConfig,
-  posthogId
-} from '@/lib/config'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+import { fathomConfig, fathomId, posthogConfig, posthogId } from '@/lib/config'
 
-if (!isServer) {
-  bootstrap()
+function usePrevious(value) {
+  const ref = React.useRef()
+
+  React.useEffect(() => {
+    ref.current = value
+  }, [value])
+
+  return ref.current
 }
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
+  const previousPathname = usePrevious(router.pathname)
 
   React.useEffect(() => {
     function onRouteChangeComplete() {
@@ -61,5 +65,20 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [router.events])
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <div className='fixed inset-0 flex justify-center sm:px-8'>
+        <div className='flex w-full max-w-7xl lg:px-8'>
+          <div className='w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20' />
+        </div>
+      </div>
+      <div className='relative'>
+        <Header />
+        <main className='pb-16'>
+          <Component previousPathname={previousPathname} {...pageProps} />
+        </main>
+        <Footer />
+      </div>
+    </>
+  )
 }

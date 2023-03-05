@@ -1,21 +1,21 @@
 {
-  "name": "Next.js Notion Starter Kit",
-  "short_name": "Starter Kit",
+  "name": "tristandeane.ca",
+  "short_name": "tristandeane.ca",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon/favicon.ico",
       "type": "image/png",
       "sizes": "32x32"
     },
     {
-      "src": "/favicon-128x128.png",
+      "src": "/favicon/favicon-16x16.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "16x16"
     },
     {
-      "src": "/favicon-192x192.png",
+      "src": "/favicon/favicon-32x32.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "32x32"
     }
   ],
   "theme_color": "#000000",
