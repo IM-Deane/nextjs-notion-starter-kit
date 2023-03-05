@@ -12,7 +12,7 @@ import { ModeToggle } from '@/components/ModeToggle'
 import { ChevronDownIcon, CloseIcon } from '@/components/utils/icons'
 import { NAVIGATION } from '@/components/utils/index'
 
-import avatarImage from '/public/images/tristan-avatar.jpg'
+import avatarImage from '/public/images/tristan-headshot.jpg'
 
 function MobileNavItem({ href, children }) {
   return (
