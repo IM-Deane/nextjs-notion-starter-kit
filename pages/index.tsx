@@ -8,7 +8,7 @@ import * as config from '@/lib/config'
 import { Container } from '@/components/Container'
 import { Photos } from '@/components/Home/Photos'
 // import { Article } from '@/components/Home/Article'
-// import { Resume } from '@/components/Home/Resume'
+import { Resume } from '@/components/Home/Resume'
 import { SocialLink } from '@/components/SocialLink'
 
 const ICON_STYLE =
@@ -58,8 +58,7 @@ export default function Home() {
             ))} */}
           </div>
           <div className='space-y-10 lg:pl-16 xl:pl-24'>
-            {/* FIXME: link bug */}
-            {/* <Resume /> */}
+            <Resume />
           </div>
         </div>
       </Container>
