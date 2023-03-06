@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button } from '@/components/Button'
 
-import { MailIcon } from './utils/icons'
+import { MailIcon } from '../utils/icons'
 
 export function Newsletter() {
   return (
