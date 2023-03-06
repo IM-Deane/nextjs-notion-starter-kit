@@ -4,7 +4,7 @@ import slugify from 'slugify'
 const NOTION_API_KEY = process.env.NOTION_API_KEY ?? ''
 const notion = new Client({ auth: NOTION_API_KEY })
 
-export async function getFeaturedArticles() {
+export async function getPosts() {
   const database = await queryDatabase()
   return parseProperties(database)
 }
@@ -33,6 +33,9 @@ const queryDatabase = async () =>
 export type Post = {
   id: string
   title: string
+  description: string
+  published_on: string
+  slug: string
 }
 
 const parseProperties = (database: any): Post[] =>
@@ -47,3 +50,12 @@ const parseProperties = (database: any): Post[] =>
 
     return { id, title, slug, published_on, description }
   })
+
+export function formatDate(dateString: string) {
+  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC'
+  })
+}

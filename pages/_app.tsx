@@ -77,7 +77,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className='pb-16'>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
-        <Footer />
+        {/* the blog section has it's own footer component */}
+        {!router.pathname.includes('/blog/') && <Footer />}
       </div>
     </>
   )

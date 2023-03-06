@@ -10,7 +10,7 @@ export const NAVIGATION: NavItem[] = [
   },
   {
     title: 'Blog',
-    href: '/blog'
+    href: '/posts'
   },
   {
     title: 'Projects',

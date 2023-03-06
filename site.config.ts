@@ -6,14 +6,14 @@ import logoZTM from '/public/images/logos/ztm-logo.png'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'a2e4e7d238da4434abbc21c48df55d24',
+  rootNotionPageId: 'd5bfe8f4b71b4bc291a6abb36e9ff70a',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Engineer, writer, and Star Wars aficionado',
+  name: 'Engineer, writer, & Star Wars aficionado',
   domain: 'tristandeane.ca',
   author: 'Tristan Deane',
   email: 'contact@tristandeane.ca',

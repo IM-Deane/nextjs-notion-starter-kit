@@ -10,7 +10,7 @@ import { Article } from '@/components/Home/Article'
 import { Photos } from '@/components/Home/Photos'
 import { Resume } from '@/components/Home/Resume'
 import { SocialLink } from '@/components/SocialLink'
-import { getFeaturedArticles } from '@/lib/get-featured-articles'
+import { getPosts } from '@/lib/get-articles'
 
 const ICON_STYLE =
   'h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300 hover:text-teal-500 dark:hover:text-teal-400'
@@ -69,7 +69,7 @@ export default function Home({ articles }) {
 export async function getStaticProps() {
   return {
     props: {
-      articles: await getFeaturedArticles()
+      articles: await getPosts()
     }
   }
 }
