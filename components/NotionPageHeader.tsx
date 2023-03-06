@@ -1,88 +1,101 @@
 import * as React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 import * as types from 'notion-types'
-import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
-import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import cs from 'classnames'
-import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import clsx from 'clsx'
+import { Breadcrumbs, Header } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
-import { useDarkMode } from '@/lib/use-dark-mode'
+import { Container } from '@/components/Container'
+import { DesktopNavigation } from '@/components/Header'
+import { MobileNavigation } from '@/components/Header'
+import { ModeToggle } from '@/components/ModeToggle'
+import { navigationStyle } from '@/lib/config'
 
-import styles from './styles.module.css'
+import avatarImage from '/public/images/tristan-headshot.jpg'
 
-const ToggleThemeButton = () => {
-  const [hasMounted, setHasMounted] = React.useState(false)
-  const { isDarkMode, toggleDarkMode } = useDarkMode()
-
-  React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  const onToggleTheme = React.useCallback(() => {
-    toggleDarkMode()
-  }, [toggleDarkMode])
-
+function AvatarContainer({ className = '', ...props }) {
   return (
     <div
-      className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
-      onClick={onToggleTheme}
+      className={clsx(
+        className,
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+      )}
+      {...props}
+    />
+  )
+}
+
+function Avatar({ large = false, className = '', ...props }) {
+  return (
+    <Link
+      href='/'
+      aria-label='Home'
+      className={clsx(className, 'pointer-events-auto')}
+      {...props}
     >
-      {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
-    </div>
+      <Image
+        src={avatarImage}
+        alt='A headshot of Tristan Deane'
+        sizes={large ? '4rem' : '2.25rem'}
+        className={clsx(
+          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          large ? 'h-16 w-16' : 'h-9 w-9'
+        )}
+        priority
+      />
+    </Link>
   )
 }
 
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
 }> = ({ block }) => {
-  const { components, mapPageUrl } = useNotionContext()
-
   if (navigationStyle === 'default') {
     return <Header block={block} />
   }
 
   return (
-    <header className='notion-header'>
-      <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
-
-        <div className='notion-nav-header-rhs breadcrumbs'>
-          {navigationLinks
-            ?.map((link, index) => {
-              if (!link.pageId && !link.url) {
-                return null
-              }
-
-              if (link.pageId) {
-                return (
-                  <components.PageLink
-                    href={mapPageUrl(link.pageId)}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.PageLink>
-                )
-              } else {
-                return (
-                  <components.Link
-                    href={link.url}
-                    key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
-                  >
-                    {link.title}
-                  </components.Link>
-                )
-              }
-            })
-            .filter(Boolean)}
-
-          <ToggleThemeButton />
-
-          {isSearchEnabled && <Search block={block} title={null} />}
+    <>
+      <header className='notion-header' style={{ marginBottom: '10px' }}>
+        <div className='notion-nav-header'>
+          <Breadcrumbs block={block} rootOnly={true} />
+          <div
+            className='notion-nav-header-rhs breadcrumbs'
+            style={{ flexGrow: 1 }}
+          >
+            <div
+              className='pointer-events-none relative z-50 flex grow items-center h-full'
+              style={{
+                height: 'var(--header-height)',
+                marginBottom: 'var(--header-mb)'
+              }}
+            >
+              <div>
+                <Container
+                  className='top-[var(--header-top,theme(spacing.6))] w-full'
+                  style={{ position: 'var(--header-inner-position)' }}
+                >
+                  <div className='relative flex gap-4'>
+                    <div className='flex flex-1'>
+                      <AvatarContainer>
+                        <Avatar />
+                      </AvatarContainer>
+                    </div>
+                    <div className='flex flex-1 justify-end md:justify-center'>
+                      <MobileNavigation className='pointer-events-auto md:hidden' />
+                      <DesktopNavigation className='pointer-events-auto hidden md:block' />
+                    </div>
+                  </div>
+                </Container>
+              </div>
+            </div>
+            <div className='pointer-events-auto'>
+              <ModeToggle />
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   )
 }

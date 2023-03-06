@@ -73,12 +73,12 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <div className='relative'>
-        <Header />
-        <main className='pb-16'>
+        {!router.pathname.includes('/posts/') && <Header />}
+        <main className={`${!router.pathname.includes('/posts/') && 'pb-16'}`}>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
         {/* the blog section has it's own footer component */}
-        {!router.pathname.includes('/blog/') && <Footer />}
+        {!router.pathname.includes('/posts/') && <Footer />}
       </div>
     </>
   )
