@@ -326,6 +326,11 @@
   );
 }
 
+/* Align the blog's dark-mode with the rest of the site */
+.dark-mode {
+  --bg-color: rgba(15, 23, 42, 0.05);
+}
+
 /* disable highlighting in dark mode */
 .dark-mode .notion-red_background,
 .dark-mode .notion-pink_background,

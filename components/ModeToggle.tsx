@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { MoonIcon, SunIcon } from '@/components/utils/icons'
+import { useDarkMode } from '@/lib/use-dark-mode'
 
 export function ModeToggle() {
+  const { toggleDarkMode } = useDarkMode()
+
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add('[&_*]:!transition-none')
     window.setTimeout(() => {
@@ -22,6 +25,7 @@ export function ModeToggle() {
     } else {
       window.localStorage.isDarkMode = isDarkMode
     }
+    toggleDarkMode() // keep the blog portion of site synced
   }
 
   return (
