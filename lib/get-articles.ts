@@ -27,7 +27,13 @@ const queryDatabase = async () =>
           }
         }
       ]
-    }
+    },
+    sorts: [
+      {
+        property: 'published_on',
+        direction: 'descending'
+      }
+    ]
   })
 
 export type Post = {
