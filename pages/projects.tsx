@@ -56,8 +56,8 @@ export default function Projects() {
         <meta name='description' content='My caffeine-fueled creations.' />
       </Head>
       <SimpleLayout
-        title='My caffine fueled creations.'
-        intro='I’ve worked on many little projects over the years, but these are the ones I’m most proud of (for now).'
+        title='My caffeine-fueled creations.'
+        intro='I’ve worked on many little projects over the years, but these are probably the ones I’m most proud of (for now).'
       >
         <ul
           role='list'
