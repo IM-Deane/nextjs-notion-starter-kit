@@ -5,47 +5,35 @@ import React from 'react'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import logoAnimaginary from '/public/images/logos/animaginary.svg'
-import logoCosmos from '/public/images/logos/cosmos.svg'
-import logoHelioStream from '/public/images/logos/helio-stream.svg'
-import logoOpenShuttle from '/public/images/logos/open-shuttle.svg'
-import logoPlanetaria from '/public/images/logos/planetaria.svg'
+import logoAlchemized from '/public/images/logos/alchemized-software-logo.png'
+import logoAuvid from '/public/images/logos/auvid.svg'
+import logoSwiftConvert from '/public/images/logos/swift-convert.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria
+    name: 'SwiftConvert',
+    description: 'SwiftConvert: Free, fast, and flawless HEIC conversions',
+    link: {
+      href: 'https://swift-convert.vercel.app/',
+      label: 'swiftconvert.ca'
+    },
+    logo: logoSwiftConvert
   },
   {
-    name: 'Animaginary',
+    name: 'Alchemized Software',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary
+      'A boutique software company for those in need of bespoke digital solutions.',
+    link: {
+      href: 'https://alchemizedsoftware.com',
+      label: 'alchemizedsoftware.com'
+    },
+    logo: logoAlchemized
   },
   {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle
+    name: 'Auvid',
+    description: 'Real-time audio transcription service (Coming soon)',
+    link: { href: '#', label: 'coming soon' },
+    logo: logoAuvid
   }
 ]
 
@@ -65,14 +53,11 @@ export default function Projects() {
     <>
       <Head>
         <title>Projects - Tristan Deane</title>
-        <meta
-          name='description'
-          content='Things I’ve made trying to put my dent in the universe.'
-        />
+        <meta name='description' content='My caffeine-fueled creations.' />
       </Head>
       <SimpleLayout
-        title='Things I’ve made trying to put my dent in the universe.'
-        intro='I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.'
+        title='My caffine fueled creations.'
+        intro='I’ve worked on many little projects over the years, but these are the ones I’m most proud of (for now).'
       >
         <ul
           role='list'
