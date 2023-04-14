@@ -14,8 +14,8 @@ const projects = [
     name: 'SwiftConvert',
     description: 'SwiftConvert: Free, fast, and flawless HEIC conversions',
     link: {
-      href: 'https://swift-convert.vercel.app/',
-      label: 'swiftconvert.ca'
+      href: 'https://www.swiftconvert.io/',
+      label: 'swiftconvert.io'
     },
     logo: logoSwiftConvert
   },
