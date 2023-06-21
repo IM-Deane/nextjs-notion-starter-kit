@@ -10,7 +10,7 @@ export const NAVIGATION: NavItem[] = [
   },
   {
     title: 'Blog',
-    href: '/posts'
+    href: 'https://blog.tristandeane.ca/'
   },
   {
     title: 'Projects',

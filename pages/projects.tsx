@@ -6,7 +6,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
 import logoAlchemized from '/public/images/logos/alchemized-software-logo.png'
-import logoAuvid from '/public/images/logos/auvid.svg'
+import logoPlusOne from '/public/images/logos/plusone-563x563.png'
 import logoSwiftConvert from '/public/images/logos/swift-convert.svg'
 
 const projects = [
@@ -30,10 +30,10 @@ const projects = [
     logo: logoAlchemized
   },
   {
-    name: 'Auvid',
-    description: 'Real-time audio transcription service (Coming soon)',
+    name: 'PlusOne',
+    description: 'A simple and powerful event management platform.',
     link: { href: '#', label: 'coming soon' },
-    logo: logoAuvid
+    logo: logoPlusOne
   }
 ]
 
