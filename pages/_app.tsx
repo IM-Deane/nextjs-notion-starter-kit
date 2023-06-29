@@ -74,7 +74,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
       <div className='relative'>
         {!router.pathname.includes('/posts/') && <Header />}
-        <main className={`${!router.pathname.includes('/posts/') && 'pb-16'}`}>
+        <main
+          className={`${!!router.pathname.includes('/posts/') && 'pb-16'} z-50`}
+        >
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
         {/* the blog section has it's own footer component */}
