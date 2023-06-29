@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import * as types from 'notion-types'
 import clsx from 'clsx'
-import { Breadcrumbs, Header } from 'react-notion-x'
+import { Header } from 'react-notion-x'
 
 import { Container } from '@/components/Container'
 import { DesktopNavigation } from '@/components/Header'
@@ -59,7 +59,6 @@ export const NotionPageHeader: React.FC<{
     <>
       <header className='notion-header' style={{ marginBottom: '10px' }}>
         <div className='notion-nav-header'>
-          <Breadcrumbs block={block} rootOnly={true} />
           <div
             className='notion-nav-header-rhs breadcrumbs'
             style={{ flexGrow: 1 }}
