@@ -13,9 +13,7 @@ function Article({ article }) {
   return (
     <article className='md:grid md:grid-cols-4 md:items-baseline'>
       <Card className='md:col-span-3'>
-        <Card.Title href={`/posts/${article.id}`} isExternal>
-          {article.title}
-        </Card.Title>
+        <Card.Title href={`/posts/${article.id}`}>{article.title}</Card.Title>
         <Card.Eyebrow
           as='time'
           dateTime={article.published_on}

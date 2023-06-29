@@ -7,9 +7,7 @@ import { Card } from '../Card'
 export function Article({ article }) {
   return (
     <Card as='article'>
-      <Card.Title href={`/posts/${article.id}`} isExternal={true}>
-        {article.title}
-      </Card.Title>
+      <Card.Title href={`/posts/${article.id}`}>{article.title}</Card.Title>
       <Card.Eyebrow as='time' dateTime={article.published_on} decorate>
         {formatDate(article.published_on)}
       </Card.Eyebrow>
