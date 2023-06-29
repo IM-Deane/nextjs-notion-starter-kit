@@ -27,12 +27,21 @@ export function Card({ as: Component = 'div', children, className = '' }) {
   )
 }
 
-Card.Link = function CardLink({ children, href, isExternal = false }) {
+Card.Link = function CardLink({
+  children,
+  href,
+  isExternal = false,
+  openInNewTab = false
+}) {
   return (
     <>
       <div className='absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl' />
       {isExternal ? (
-        <a href={href} target='_blank' rel='noopener noreferrer'>
+        <a
+          href={href}
+          rel='noopener noreferrer'
+          target={openInNewTab ? '_blank' : '_self'}
+        >
           <span className='absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl' />
           <span className='relative z-10'>{children}</span>
         </a>
