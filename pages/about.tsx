@@ -51,9 +51,9 @@ export default function About() {
             <div className='max-w-xs px-2.5 lg:max-w-none'>
               <Image
                 src={vaderPortrait}
-                alt=''
+                alt='Darth Vader oil painting by Tristan Deane and MidJourney'
                 sizes='(min-width: 1024px) 32rem, 20rem'
-                className='aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800'
+                className='aspect-square lg:rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800'
               />
             </div>
           </div>

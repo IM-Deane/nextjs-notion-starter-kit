@@ -5,6 +5,10 @@ interface NavItem {
 
 export const NAVIGATION: NavItem[] = [
   {
+    title: 'Home',
+    href: '/'
+  },
+  {
     title: 'About',
     href: '/about'
   },
