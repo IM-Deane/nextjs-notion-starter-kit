@@ -58,23 +58,23 @@ export default siteConfig({
   // important pages
   // navigationStyle: 'default',
   navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'Home',
-  //     url: '/'
-  //     // pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Blog',
-  //     url: '/posts'
-  //     // pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   },
-  //   {
-  //     title: 'Projects',
-  //     url: '/projects'
-  //     // pageId: 'f1199d37579b41cbabfc0b5174fas123'
-  //   }
-  // ],
+  navigationLinks: [
+    {
+      title: 'Home',
+      url: '/'
+      // pageId: 'f1199d37579b41cbabfc0b5174f4256a'
+    },
+    {
+      title: 'Blog',
+      url: '/posts'
+      // pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
+    },
+    {
+      title: 'Projects',
+      url: '/projects'
+      // pageId: 'f1199d37579b41cbabfc0b5174fas123'
+    }
+  ],
 
   resume: [
     {
