@@ -1,12 +1,16 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
 
-import clsx from 'clsx'
+
+
+import clsx from 'clsx';
+
+
 
 import { Container } from '@/components/Container'
-import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import { email, github, linkedin } from '@/lib/config'
+import { GitHubIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
+import { email, github, linkedin, twitter } from '@/lib/config'
 
 import vaderPortrait from '/public/images/photos/darth-vader-oil-painting.png'
 
@@ -96,6 +100,9 @@ export default function About() {
           </div>
           <div className='lg:pl-20'>
             <ul role='list'>
+              <SocialLink href={twitter} icon={TwitterIcon} className='mt-4'>
+                Find me on Twitter
+              </SocialLink>
               <SocialLink href={github} icon={GitHubIcon} className='mt-4'>
                 Find me on GitHub
               </SocialLink>

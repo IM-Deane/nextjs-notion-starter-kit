@@ -3,6 +3,7 @@ import React from 'react'
 
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
 import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 
 import * as config from '@/lib/config'
 import { Container } from '@/components/Container'
@@ -20,10 +21,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>{`Tristan Deane - ${config.name}`}</title>
-        <meta
-          name='description'
-          content='I’m Tristan, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.'
-        />
+        <meta name='description' content={config.description} />
       </Head>
       <Container className='mt-9'>
         <div className='max-w-2xl'>
@@ -34,6 +32,12 @@ export default function Home({ articles }) {
             {config.description}
           </p>
           <div className='mt-6 flex gap-6'>
+            <SocialLink
+              href={`https://twitter.com/${config.twitter}`}
+              ariaLabel='Follow Tristan on Twitter'
+            >
+              <FaTwitter className={ICON_STYLE} />
+            </SocialLink>
             <SocialLink
               href={`https://github.com/${config.github}`}
               ariaLabel='Follow Tristan on GitHub'

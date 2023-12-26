@@ -13,19 +13,19 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Engineer, writer, & Star Wars aficionado',
+  name: 'Engineer, Entrepreneur, & Star Wars Aficionado',
   domain: 'tristandeane.ca',
   author: 'Tristan Deane',
   email: 'contact@tristandeane.ca',
 
   // open graph metadata (optional)
   description:
-    "Hey friend, I'm Tristan, a software engineer and entrepreneur from Edmonton, Canada. I have a deep fascination with technology and entrepreneurship, and I'm always looking for ways to combine these passions.",
+    'Hey friend, I’m Tristan, a software engineer and entrepreneur based in Edmonton, Canada. I build digital products and occasionally remember to write about them.',
 
   // social usernames (optional)
-  twitter: 'thebashfulsun',
-  github: 'IM-Deane',
-  linkedin: 'tristan-deane-software-developer',
+  twitter: 'SoftwareTrizzey',
+  github: 'software-trizzey',
+  linkedin: 'software-trizzey',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
