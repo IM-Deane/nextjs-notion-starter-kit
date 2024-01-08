@@ -13,17 +13,17 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Engineer, Entrepreneur, & Star Wars Aficionado',
+  name: "Hey, I'm Tristan",
   domain: 'tristandeane.ca',
   author: 'Tristan Deane',
   email: 'contact@tristandeane.ca',
 
   // open graph metadata (optional)
   description:
-    'Hey friend, I’m Tristan, a software engineer and entrepreneur based in Edmonton, Canada. I build digital products and occasionally remember to write about them.',
+    "I'm a seasoned software engineer that builds digital products and occasionally remembers to write about them.",
 
   // social usernames (optional)
-  twitter: 'SoftwareTrizzey',
+  twitter: 'thetristandeane',
   github: 'software-trizzey',
   linkedin: 'software-trizzey',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
