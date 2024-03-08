@@ -79,6 +79,7 @@ export default class MyDocument extends Document {
               href='/favicon/safari-pinned-tab.svg'
               color='#5bbad5'
             />
+            <meta name='impact-site-verification' content='12fa10d4-2cee-4a9a-853e-4c95912a457a'/>
             <meta name='msapplication-TileColor' content='#da532c' />
             <meta name='theme-color' content='#ffffff' />
           </Head>
